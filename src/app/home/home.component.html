@@ -1,0 +1,15 @@
+<h1>
+  Details of last uploaded youtube videos
+</h1>
+<div>
+  <ul *ngFor="let video of details">
+    <li>{{ video.id.videoId }} </li>
+    <a routerLink="/home/youtube/{{ video.id.videoId }} " routerLinkActive="active">
+      <li>{{ video.snippet.title }}</li>
+    </a>
+    <li>{{ video.snippet.description}}</li>
+    <img src="{{video.snippet.thumbnails.default.url}}" alt="Forest" height={{video.snippet.thumbnails.default.height}}
+         width={{video.snippet.thumbnails.default.width}}>
+  </ul>
+</div>
+<router-outlet></router-outlet>
